@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/post.js"></script>
+    <script type="text/javascript" src="js/weixin.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>最新活动</title>
+    <style>
+
+        .rongqi{
+            width:1400px;
+            margin: 0 auto;
+
+        }
+        .header{
+            position:fixed;
+            top:0;left:0;
+            width: 100%;
+            height: 100px;
+            background-color: #ff8b31;
+            border: 0;
+            z-index: 1;
+            min-width:1400px ;
+            margin: 0 auto;
+        }
+        .logo{
+            width: 350px;
+            height: 100px;
+            float: left;margin: 0 auto;
+        }
+        .logo img{
+            float: left;
+            width: 350px;
+            height: 100px;
+            margin-left:  3%;
+            margin-right:200px;
+        }
+
+
+        .header_list ul{
+            float:right;
+            margin-top: 7px;
+            margin-right: 10px;
+            width: 860px;
+            height: 80px;
+            color: whitesmoke;
+        }
+        .header_list li{
+            float:left;
+            margin:20px 6px;
+            background-color:#ff8b31;
+            list-style: none;
+        }
+        .header_list ul a:link{/*固定栏文字*/
+            display: block;
+
+            color: whitesmoke;
+            width: 100px;height: 30px;
+            font:bold 23px/1 "宋体";
+            padding-top: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .header_list{
+            display: inline-block;
+            width:60%;
+            height: 80px;
+            margin-left: 8%;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .shoue{
+            position: absolute;
+            margin-top: -20px;
+            margin-left: 15px;
+        }
+        .shou{
+            margin-top: 10px;
+        }
+        .order{
+            position: relative;
+            z-index: 0;
+        }
+        .order img{
+            position: absolute;
+            margin-left:30px;
+        }
+        .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:  #852513;
+            min-width: 120px;
+            float:left;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+        }
+
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #d26f2c;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            -webkit-transition: all 1s ease-in;
+            -moz-transition: all 1s ease-in;
+            -ms-transition: all 0.1s ease-in;
+            -o-transition: all 0.1s ease-in;
+            transition: all 0.1s ease-in;
+        }
+        .shou:hover ,.dropbtn:hover,.about:hover{
+            -webkit-transform:scale(2,2);
+            -moz-transform: scale(2,2);
+            -ms-transform: scale(1.1,1.1);
+            -o-transform: scale(1.1,1.1);
+            transform:scale(1.1,1.1);
+            background-color: #ea7d30;
+        }
+        .order img{
+            width:100px;
+            height:50px; margin-top:0px;
+        }.footer{
+    margin-top: 70px;
+    bottom: 0;
+    background-color: #ff8b31;
+    width: 100%;
+    height: 270px;
+}
+.no1{
+    height: 40%;
+    width:30% ;
+    float: left;
+}
+.no1 ul{
+    float:left;
+    margin: 10px 10px;
+    background-color:;
+    width: 500px;
+    height:50px;
+
+}
+.no1 li{
+    float:left;
+    margin:10px 10px;
+    color: whitesmoke;
+    list-style: none;
+}
+.no1 ul a:link{/*¹Ì¶¨À¸ÎÄ×Ö*/
+    display: block;
+    color: whitesmoke;
+    height: 25px;
+    font:bold 18px/1 "ËÎÌå";
+    padding-top: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+.no1 a{
+    text-decoration: none;color: whitesmoke;
+}
+.no2{
+
+}
+.no2h,.no3h{
+    color: whitesmoke;
+    height: 25px;
+    font:bold 18px/1 "ËÎÌå";
+    padding-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 57px;  float: left;
+}
+.icon{
+    float: left;
+    height: 100%;
+    width:40%;
+
+    margin-left: 20%;
+}
+.erwei{
+    width:170px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    opacity: 0;
+
+}
+.weixin{
+    width:70px;
+    height: 70px;
+    margin: 20px 10px;
+}
+.QQ{
+    width: 70px;
+    height: 70px;
+    margin: 20px 10px;
+}
+.QQ:hover{
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -ms-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
+    transform:scale(1.1,1.1);
+}
+
+
+        .goodstitle{
+            width: 100%;
+            height: 180px;
+            background-color: #f6f4ed;
+            margin-top: 120px;
+        }
+        .type{
+            width: 100%;
+            height: 100px;
+            margin-left: 8%;
+
+        }
+        .eng ,.cutline{
+            font-family: Garamond, serif;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:0;
+            font-size:20px;
+        }
+        .goodstitle .eng,.cutline{
+            color: #747370;font-size:30px;
+        }
+        .name
+        {  margin-top: 20px;
+            font-family: "黑体";
+            color: #805506;font-size:30px;
+            font-weight: 600;
+
+        }
+        .typeintro{
+            float: left;
+            margin-left: 8%;
+            margin-top: 20px;
+            width: 900px;
+            color: #747370;
+            font-family: Impact;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .act-biaoti {
+            width: 100%;
+            height: 1900px;
+        }
+        .act-biaoti img{
+             width: 80%;
+             height: 100%;
+            margin-left: 10%;
+         }
+        .title {
+            font-size: 40px;
+            padding-top: 30px;
+            padding-left: 450px;
+            color: white;
+            font-family: "幼圆";
+            font-weight: 500;
+        }
+.new{
+    width: 600px;
+    height: 400px;
+    background-color: #1395e4;
+    margin-top: 40px;
+    margin-left: 200px;
+}
+        .new img{
+            width: 300px;
+            height: 300px;
+            float: left;
+        }
+
+        </style>
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="rongqi">
+    <div class="header">
+        <div class="logo">
+            <img id="logo" src="pic/logo.png" alt="logo">
+        </div>
+        <div class="header_list">
+            <ul>
+                <li class="shou"><a href="index.html"  style="color: white">首页</a> </li>
+
+                <li class="dropdown">
+                    <a href="cake.html"  class="dropbtn" style="color: white">蛋糕</a>
+                    <div class="dropdown-content">
+
+                    </div></li>
+                <li class="dropdown">
+                    <a href="bread.html"  class="dropbtn" style="color: white">面包</a>
+                    <div class="dropdown-content">
+
+                </li>
+                <li class="dropdown">
+                    <a href="pastry.html"  class="dropbtn"  style="color: white">点心</a>
+                </li>
+                <li ><a href="act.html" class="about" style="color: white">最新活动</a></li>
+                <li class="order">
+                    <img  src="pic/椭圆.png" ><a class="ord1" href="order.html"  style="color:darkorange;z-index: 10;position: absolute;margin-left: 30px">订单</a>
+                </li>
+                <li id="loginDiv"  style="float: right;margin-top: 5px;margin-left: 10px;">您好,请先登录<br>
+                    <a style="font-size: 15px" href="login.aspx" target="_blank" >登录/注册</a>
+                <script type="text/javascript">
+                    var userID = $.cookie("userId"); // 获得cookie
+                    if (userID!=null) {
+                        $.ajax({
+                            type: 'post',
+                            url: 'Handler.ashx',
+                            async: true,
+                            data: { KEY: '1', ID: userID },// key= 1获取单个用户全部信息
+                            success: function (result) {
+                                var user = eval('(' + result + ')');
+                                var userNickName = user.nickName;
+                                document.getElementById("loginDiv").innerHTML="欢迎你，"+userNickName+"<br><a style=\"font-size: 15px\" href=\"login.aspx\" target=\"_blank\" >注销</a>";
+                            },
+                            error: function () {
+                                alert("userPost error");
+                            }
+                        });
+                    }
+                </script></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="act-h">
+        <div class="goodstitle">
+            <h class="type">
+
+                <span class="eng">new&nbsp&&&nbspactivity</span>
+                <i class="cutline">/
+                </i> <i class="name">新品活动</i> </h><br>
+
+            <h class="typeintro">幻想面包将点心与更多的美味元素和地域文化联系并融合到一起。冲破地域的局限，精选各地优质原料，打造异地特色点心，在<br><br>大师的精心制作下，成就一场美味与文化并重的人文盛宴。</h>
+
+        </div>
+    </div>
+
+    <div class="act-biaoti">
+    <img src="pic/di6.jpg">
+    </div>
+
+</div>
+<div class="footer">
+    <div class="no1">
+        <ul>
+            <li><a href="https://www.baidu.com/">加入我们</a></li>
+            <li>|</li>
+            <li><a href="https://www.baidu.com/">企业招标</a></li>
+            <li>|</li>
+            <li><a href="https://www.baidu.com/">联系我们</a></li>
+        </ul>
+        <h class="no2h">客服电话： 87632 49536</h>
+        <h class="no3h">版权所有 © 2016 自贡面包幻想 . POWER BY BREAD </h>
+    </div>
+    <div class="icon">
+
+        <img class="erwei" src="pic/erwei.png">
+
+        <img class="weixin" src="pic/weixin.png">
+        <a href="https://mail.qq.com/"><img class="QQ" src="pic/QQ.png"></a>
+    </div>
+
+</div>
+
+</body>
+</html>

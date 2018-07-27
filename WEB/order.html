@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单</title>
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/order.css">
+
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/weixin.js"></script>
+    <script type="text/javascript" src="js/post.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+
+    <!--MessqgaBox提示框-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.dialogbox.css">
+    <script src="js/jquery.dialogBox.js"></script>
+
+
+</head>
+<body onload="orderPost()">
+<div class="rongqi">
+    <div class="header">
+        <div class="logo">
+            <img id="logo" src="pic/logo.png" alt="logo">
+        </div>
+        <div class="header_list">
+            <ul>
+                <li class="shou"><a href="index.html"  style="color: white">首页</a> </li>
+
+                <li class="dropdown">
+                    <a href="cake.html" target="_blank"  class="dropbtn" style="color: white">蛋糕</a>
+                    <div class="dropdown-content">
+
+                    </div></li>
+                <li class="dropdown">
+                    <a href="bread.html"  class="dropbtn" style="color: white">面包</a>
+                    <div class="dropdown-content">
+
+                </li>
+                <li class="dropdown">
+                    <a href="pastry.html" class="dropbtn"  style="color: white">点心</a>
+                </li>
+                <li ><a href="act.html"   class="about" style="color: white">最新活动</a></li>
+                <li class="order">
+                    <img  src="pic/椭圆.png" ><a class="ord1" href="order.html"  style="color:darkorange;z-index: 10;position: absolute;margin-left: 30px">订单</a>
+                </li>
+                <li id="loginDiv"  style="float: right;margin-top: 5px;margin-left: 10px;">您好,请先登录<br>
+                    <a style="font-size: 15px" href="login.aspx" target="_blank" >登录/注册</a>
+                    <script type="text/javascript">
+                    var userID = $.cookie("userId"); // 获得cookie
+                    if (userID!=null) {
+                        $.ajax({
+                            type: 'post',
+                            url: 'Handler.ashx',
+                            async: true,
+                            data: { KEY: '1', ID: userID },// key= 1获取单个用户全部信息
+                            success: function (result) {
+                                var user = eval('(' + result + ')');
+                                var userNickName = user.nickName;
+                                document.getElementById("loginDiv").innerHTML="欢迎你，"+userNickName+"<br><a style=\"font-size: 15px\" href=\"login.aspx\" target=\"_blank\" >注销</a>";
+                            },
+                            error: function () {
+                                alert("userPost error");
+                            }
+                        });
+                    }
+                </script>
+                  </li>
+
+            </ul>
+        </div>
+    </div>
+
+ <div class="ordertab">
+    <div class="orderleft">
+        <div class="fa"><p><br>待发货</p></div>
+        <div class="shouhuo"><p><br>待收货</p></div>
+        <div class="wan"><p><br>已完成</p></div>
+    </div>
+    <div class="orderh">
+        <ul>
+            <li>订单号</li>
+            <li>|</li>
+            <li>商品名称</li> <li>|</li>
+            <li>数量</li> <li>|</li>
+            <li>价格</li>
+        </ul>
+    </div>
+   
+     <div class="list1" id="list1"></div>
+  
+    <div class="list2" id="list2"></div>
+ 
+    <div class="list3" id="list3"></div>
+  
+</div>
+
+    <div class="footer">
+        <div class="no1">
+            <ul>
+                <li><a href="https://www.baidu.com/">加入我们</a></li>
+                <li>|</li>
+                <li><a href="https://www.baidu.com/">企业招标</a></li>
+                <li>|</li>
+                <li><a href="https://www.baidu.com/">联系我们</a></li>
+            </ul>
+            <h class="no2h">客服电话： 87632 49536</h>
+            <h class="no3h">版权所有 © 2016 自贡面包幻想 . POWER BY BREAD </h>
+        </div>
+        <div class="icon">
+
+            <img class="erwei" src="pic/erwei.png">
+
+            <img class="weixin" src="pic/weixin.png">
+            <a href="https://mail.qq.com/"><img class="QQ" src="pic/QQ.png"></a>
+        </div>
+
+    </div>
+</div>
+<div id="QMessageBox" z-index=999></div>
+</body>
+</html>

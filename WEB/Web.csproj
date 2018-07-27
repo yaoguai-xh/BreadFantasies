@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61A2B22E-50AF-41E2-A8A4-C7FC201295FE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="act.html" />
+    <Content Include="AjaxTest.html" />
+    <Content Include="bread.html" />
+    <Content Include="cake.html" />
+    <Content Include="css\cssimage\tip-darkgray.png" />
+    <Content Include="css\cssimage\tip-darkgray_arrows.png" />
+    <Content Include="css\cssimage\tip-skyblue.png" />
+    <Content Include="css\cssimage\tip-skyblue_arrows.png" />
+    <Content Include="css\cssimage\tip-yellow.png" />
+    <Content Include="css\cssimage\tip-yellow_arrows.png" />
+    <Content Include="css\daohang.css" />
+    <Content Include="css\goods.css" />
+    <Content Include="css\goodsPage.css" />
+    <Content Include="css\goodsStyle.css" />
+    <Content Include="css\jquery.dialogbox.css" />
+    <Content Include="css\loginPage.css" />
+    <Content Include="css\min.css" />
+    <Content Include="css\order.css" />
+    <Content Include="css\registerPage.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="goods.html" />
+    <Content Include="GoodsShow.aspx" />
+    <Content Include="img\10001_1.jpg" />
+    <Content Include="img\10001_2.jpg" />
+    <Content Include="img\10001_3.jpg" />
+    <Content Include="img\10001_4.jpg" />
+    <Content Include="img\10001_main.jpg" />
+    <Content Include="img\10002_main.jpg" />
+    <Content Include="img\10003_main.jpg" />
+    <Content Include="img\10004_main.jpg" />
+    <Content Include="img\10005_main.jpg" />
+    <Content Include="img\10006_main.jpg" />
+    <Content Include="img\20001_main.jpg" />
+    <Content Include="img\20002_main.jpg" />
+    <Content Include="img\20003_main.jpg" />
+    <Content Include="img\20004_main.jpg" />
+    <Content Include="img\20005_main.jpg" />
+    <Content Include="img\30001_main.jpg" />
+    <Content Include="img\30002_main.jpg" />
+    <Content Include="img\30003_main.jpg" />
+    <Content Include="img\30004_main.jpg" />
+    <Content Include="img\a17.png" />
+    <Content Include="img\account.png" />
+    <Content Include="img\add.png" />
+    <Content Include="img\add1.png" />
+    <Content Include="img\area.png" />
+    <Content Include="img\background.jpg" />
+    <Content Include="img\background1.jpg" />
+    <Content Include="img\birthday2.png" />
+    <Content Include="img\count.png" />
+    <Content Include="img\icon.ico" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\local.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\money.png" />
+    <Content Include="img\password.png" />
+    <Content Include="img\phone.png" />
+    <Content Include="img\security.png" />
+    <Content Include="img\sex.png" />
+    <Content Include="img\sub.png" />
+    <Content Include="img\sub1.png" />
+    <Content Include="img\t01.png" />
+    <Content Include="index.html" />
+    <Content Include="jQuery.js" />
+    <Content Include="js\city2.js" />
+    <Content Include="js\getInfo.js" />
+    <Content Include="js\jquery-1.11.2.min.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\jquery-1.7.2.js" />
+    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\jquery.dialogBox.js" />
+    <Content Include="js\jquery.poshytip.min.js" />
+    <Content Include="js\jssor.slider-21.1.6.mini.js" />
+    <Content Include="js\myJavaScript.js" />
+    <Content Include="js\post.js" />
+    <Content Include="js\temp.js" />
+    <Content Include="js\weixin.js" />
+    <Content Include="js\新导航.html" />
+    <Content Include="login.aspx" />
+    <Content Include="order.html" />
+    <Content Include="pastry.html" />
+    <Content Include="pic\061.JPG" />
+    <Content Include="pic\aaa.js" />
+    <Content Include="pic\account.png" />
+    <Content Include="pic\area.png" />
+    <Content Include="pic\bakery.jpeg" />
+    <Content Include="pic\bakery1.jpeg" />
+    <Content Include="pic\baozhiqi.jpg" />
+    <Content Include="pic\bread.jpg" />
+    <Content Include="pic\bread.png" />
+    <Content Include="pic\bread1.png" />
+    <Content Include="pic\bread2.jpg" />
+    <Content Include="pic\bread3.jpg" />
+    <Content Include="pic\bread4.jpg" />
+    <Content Include="pic\button2.png" />
+    <Content Include="pic\button3.png" />
+    <Content Include="pic\buyicon.png" />
+    <Content Include="pic\buyimg.jpg" />
+    <Content Include="pic\Cake-128.png" />
+    <Content Include="pic\cake.jpg" />
+    <Content Include="pic\classify.jpeg" />
+    <Content Include="pic\classify1.jpg" />
+    <Content Include="pic\classify2.jpeg" />
+    <Content Include="pic\classify3.jpg" />
+    <Content Include="pic\classify4.jpeg" />
+    <Content Include="pic\classify5.jpeg" />
+    <Content Include="pic\close.png" />
+    <Content Include="pic\di.jpg" />
+    <Content Include="pic\di.png" />
+    <Content Include="pic\di1.png" />
+    <Content Include="pic\di2.png" />
+    <Content Include="pic\di3.png" />
+    <Content Include="pic\di5.png" />
+    <Content Include="pic\dislpay3.png" />
+    <Content Include="pic\display.jpeg" />
+    <Content Include="pic\display0.png" />
+    <Content Include="pic\display2.jpg" />
+    <Content Include="pic\display3.jpg" />
+    <Content Include="pic\display5.jpg" />
+    <Content Include="pic\enter.png" />
+    <Content Include="pic\erwei.png" />
+    <Content Include="pic\ge.jpeg" />
+    <Content Include="pic\ge1.jpeg" />
+    <Content Include="pic\goodsimg.jpg" />
+    <Content Include="pic\head.jpg" />
+    <Content Include="pic\home_title.png" />
+    <Content Include="pic\icon.ico" />
+    <Content Include="pic\img_display.jpg" />
+    <Content Include="pic\jiantou.png" />
+    <Content Include="pic\jquery-3.2.1.min.js" />
+    <Content Include="pic\leftimg.jpg" />
+    <Content Include="pic\local.png" />
+    <Content Include="pic\logo.png" />
+    <Content Include="pic\lunbo.html" />
+    <Content Include="pic\new.png" />
+    <Content Include="pic\new1.png" />
+    <Content Include="pic\omg.png" />
+    <Content Include="pic\pastry.jpg" />
+    <Content Include="pic\pexels-photo-192933 %281%29.jpeg" />
+    <Content Include="pic\pexels-photo-192933.jpeg" />
+    <Content Include="pic\pexels-photo-265242.jpeg" />
+    <Content Include="pic\phone-old-128.png" />
+    <Content Include="pic\phone.png" />
+    <Content Include="pic\QQ.png" />
+    <Content Include="pic\rightimg.jpg" />
+    <Content Include="pic\song.png" />
+    <Content Include="pic\stock-photo-delicious-158740617.jpg" />
+    <Content Include="pic\tim.gif" />
+    <Content Include="pic\timg.jpg" />
+    <Content Include="pic\tobadtime.jpg" />
+    <Content Include="pic\true.jpg" />
+    <Content Include="pic\weibo.png" />
+    <Content Include="pic\weibo1.png" />
+    <Content Include="pic\weixin.png" />
+    <Content Include="pic\框.png" />
+    <Content Include="pic\椭圆.png" />
+    <Content Include="pic\蛋糕.png" />
+    <Content Include="pic\进入.png" />
+    <Content Include="register.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebService.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataManager.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsShow.aspx.cs">
+      <DependentUpon>GoodsShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GoodsShow.aspx.designer.cs">
+      <DependentUpon>GoodsShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler.ashx.cs">
+      <DependentUpon>Handler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MysqlManager.cs" />
+    <Compile Include="PageData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService.asmx.cs">
+      <DependentUpon>WebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\图标素材.rar" />
+    <None Include="pic\di4.psd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8088</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

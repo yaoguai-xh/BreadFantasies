@@ -1,0 +1,274 @@
+body{
+	background-image: url(../img/background.jpg);
+}
+.header{
+	width: 100%;
+	height: 100px;
+	background-color: #ff8b31;
+	/*border-style:solid;
+    border-width:2px;*/
+}
+.header img{
+	width: 350px;
+	height: 100px;
+	float: left;
+	margin-left: 3%;
+	background-color: #ff8b31;
+}
+.header div{
+	width: 60%;
+	height: 100px;
+	float: right;
+	background-color: #ff8b31;
+}
+.header div p{
+	width: 100%;
+	text-align: center;
+	font: bold 40px/1 "宋体";
+	color: whitesmoke;
+	margin-top: 30px;
+	float: right;
+	margin-right:10%;
+
+}
+
+.container{
+	border-radius:10px 10px 10px 10px;
+	width: 600px;
+	height: 730px;
+	margin: 0 auto;
+	margin-top: 25px;
+	background-color: #CCCCCC;
+}
+/*.container p{
+	margin-top: 20px;
+	text-align: center;
+	margin-left: 5%;
+	font-size: 30px;
+	/*font: bold 30px/1 "宋体";
+	color: #ff8b31;
+
+}*/
+
+#p_container{
+	margin-top: 20px;
+	text-align: center;
+	margin-left: 5%;
+	font-size: 30px;
+	font: bold 30px/1 "宋体";
+	color: #ff8b31;
+}
+.TextInput{
+	height: 70px;
+	width: 100%;
+}
+.ImageIcon{
+	float: left;
+	margin-left: 20%;
+}
+.TextInput input{
+	border-radius:5px 5px 5px 5px;
+	width: 45%;
+	height: 40px;
+	float: left;
+	margin-left: 5%;
+	font-size: 18px;
+	text-align: left;
+    color: rgb(104,114,140);
+}
+.hit{
+	width: 80px;
+	float: right;
+	margin-right: 5%;
+	font-size: 16px;
+	font-style:italic;
+	color: #b94a48;
+	font-family: "楷体";
+}
+.lastHit{
+	width: 80%;
+	font-size: 16px;
+	font-style:italic;
+	color: #b94a48;
+	text-align: center;
+	font-family: "楷体";
+}
+
+#chooseSex{
+	width: 100%;
+	height: 70px;
+	font-size: 18px;
+	text-align: left;
+    color: rgb(104,114,140);
+}
+.inputContainer input{
+	width: 5%;
+	height: 20px;
+	margin-left: 5%;
+	font-size: 18px;
+}
+
+
+
+#chooseBirth{
+	width: 100%;
+	height: 70px;
+	font-size: 18px;
+	text-align: left;
+    color: rgb(104,114,140);
+}
+#year{
+	border-radius:5px 5px 5px 5px;
+	height: 30px;
+	font-size: 16px;
+	margin-left: 5%;
+	color: rgb(104,114,140);
+}
+#month{
+	border-radius:5px 5px 5px 5px;
+	height: 30px;
+	font-size: 16px;
+	margin-left: 0%;
+	color: rgb(104,114,140);
+}
+#days{
+	border-radius:5px 5px 5px 5px;
+	height: 30px;
+	font-size: 16px;
+	margin-left: 0%;
+	color: rgb(104,114,140);
+}
+
+
+
+#selectAddress{
+	width: 100%;
+	height: 70px;
+	font-size: 18px;
+	text-align: left;
+    color: rgb(104,114,140);
+}
+.province{
+	border-radius:5px 5px 5px 5px;
+	height: 30px;
+	font-size: 16px;
+	margin-left: 5%;
+	color: rgb(104,114,140);
+}
+.citys{
+	border-radius:5px 5px 5px 5px;
+	height: 30px;
+	font-size: 16px;
+	margin-left: 0%;
+	color: rgb(104,114,140);
+}
+.district{
+	border-radius:5px 5px 5px 5px;
+	height: 30px;
+	font-size: 16px;
+	margin-left: 0%;
+	color: rgb(104,114,140);
+}
+
+#inputAddress{
+	width: 100%;
+	height: 70px;
+	width: 100%;
+	font-size: 18px;
+	color: rgb(104,114,140);
+	
+}
+
+#p_textarea{
+	width: 40px;
+	font-size: 18px;
+	color: rgb(104,114,140);
+	float: left;
+	margin-left: 5%;
+
+}
+#inputTextarea{
+	border-radius:5px 5px 5px 5px;
+	float: left;
+	margin-left: 0%;
+	font-size: 18px;
+	color: rgb(104,114,140);
+}
+#checkboxAgreementLabel{
+	font-size: 18px;
+	color: rgb(104,114,140);
+}
+#checkboxAgreementLink{
+	font-size: 18px;
+	color: rgb(68, 136, 255);
+    display: inline-block;
+    text-decoration: none;
+}
+#btnRegsiter{
+	border-radius:7px 7px 7px 7px;
+	width: 45%;
+	height: 40px;
+	background-color: #ff8b31;
+	color: white;
+	font: bold 20px/1 "宋体";
+
+}
+
+
+
+
+
+
+
+
+
+
+#closeWindow{
+
+	margin-top: 10%;
+	height: 40px;
+	width: 80px;
+	text-align: center;
+	font: bold 20px/1 "宋体";
+	color: whitesmoke;
+	background-color: #ff8b31;
+	float: right;
+	margin-right: 45%;
+
+}
+#p_userAgreement{
+}
+.black_overlay{ 
+            display: none; 
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            width: 100%; 
+            height: 140%; 
+            background-color: black; 
+            z-index:1001; 
+            -moz-opacity: 0.8; 
+            opacity:.80; 
+            filter: alpha(opacity=88); 
+} 
+.white_content { 
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px; 
+    height: 450px; 
+    padding: 20px; 
+    
+    border: 10px solid orange; 
+    border-radius:10px 10px 10px 10px;
+    background-color: whitesmoke; 
+    z-index:1002; 
+    overflow: auto; 
+	text-align: left;
+	color: rgb(104,114,140);
+    font: bold 18px/1 "宋体";
+}

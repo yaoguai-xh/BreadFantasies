@@ -1,0 +1,342 @@
+
+.rongqi{
+    width:1400px;
+    margin: 0 auto;
+
+}
+.header{
+    position:fixed;
+    top:0;left:0;
+    width: 100%;
+    height: 100px;
+    background-color: #ff8b31;
+    border: 0;
+    z-index: 1;
+    min-width:1400px ;
+    margin: 0 auto;
+}
+.logo{
+    width: 350px;
+    height: 100px;
+    float: left;margin: 0 auto;
+}
+.logo img{
+    float: left;
+    width: 350px;
+    height: 100px;
+    margin-left:  3%;
+    margin-right:200px;
+}
+
+
+.header_list ul{
+    float:right;
+    margin-top: 7px;
+    margin-right: 10px;
+    width: 860px;
+    height: 80px;
+    color: whitesmoke;
+}
+.header_list li{
+    float:left;
+    margin:20px 6px;
+    background-color:#ff8b31;
+    list-style: none;
+}
+.header_list ul a:link{/*固定栏文字*/
+    display: block;
+
+    color: whitesmoke;
+    width: 100px;height: 30px;
+    font:bold 23px/1 "宋体";
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.header_list{
+    display: inline-block;
+    width:60%;
+    height: 80px;
+    margin-left: 8%;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.shoue{
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 15px;
+}
+.shou{
+    margin-top: 10px;
+}
+.order{
+    position: relative;
+    z-index: 0;
+    width: 100px;
+    height: 30px;
+}
+.order img{
+    position: absolute;
+    margin-left:30px;
+}
+
+.shou:hover ,.dropbtn:hover,.about:hover{
+    -webkit-transform:scale(2,2);
+    -moz-transform: scale(2,2);
+    -ms-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
+    transform:scale(1.1,1.1);
+    background-color: #ea7d30;
+}
+.order img{
+    width:100px;
+    height:50px; margin-top:0px;
+}
+.footer{
+    
+    margin: 70px 0 auto;
+    background-color: #ff8b31;
+    width: 100%;
+    height: 270px;
+    margin-top: 20px;
+}
+.no1{
+    height: 270px;
+    width:800px ;
+    float: left;
+    background-color: ;
+}
+.no1 ul{
+    float:left;
+    margin: 10px 10px;
+    background-color:;
+    width: 500px;
+    height:50px;
+
+}
+.no1 li{
+    float:left;
+    margin:10px 10px;
+    color: whitesmoke;
+    list-style: none;
+}
+.no1 ul a:link{/*固定栏文字*/
+    display: block;
+    color: whitesmoke;
+    height: 25px;
+    font:bold 18px/1 "宋体";
+    padding-top: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+.no1 a{
+    text-decoration: none;color: whitesmoke;
+}
+.no2{
+
+}
+.no2h,.no3h{
+    color: whitesmoke;
+    height: 25px;
+    font:bold 18px/1 "宋体";
+    padding-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 57px;  float: left;
+}
+.icon{
+    float: right;
+    height: 270px;
+    width: 550px;
+    background-color:;
+
+}
+
+.erwei{
+    width: 190px;
+    height: 250px;
+    margin-top: 10px;
+    margin-left: 10px;
+    opacity: 0;
+
+}
+
+
+.weixin{
+    width: 70px;
+    height: 70px;
+    margin: 20px 10px;
+}
+.QQ{
+    width: 70px;
+    height: 70px;
+    margin: 20px 10px;
+}
+.QQ:hover{
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -ms-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
+    transform:scale(1.1,1.1);
+}
+.ordertab{
+    width: 1350px;
+    height: 600px;
+    margin-top: 110px;
+    position: relative;
+    margin-left: 30px;
+    position: relative;
+}
+.orderleft{
+    width: 250px;
+    height: 400px;
+    margin-top: 60px;
+    margin-left: 0px;
+   float: left;
+}
+.fa,.shouhuo,.wan{
+    width: 250px;
+    height: 110px;
+    background-color: #8aa7ff;
+
+}
+.fa{
+    width: 250px;
+    height: 110px;
+    background-color:#31708f;
+
+}
+.orderleft p{
+     text-align: center;
+    font-size: 30px;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 700;
+}
+.orderh{
+    width: 1000px;
+    height: 50px;
+    float: left;
+
+
+}
+.orderh li{
+    float: left;
+    width: 130px;
+    height: 50px;
+    background-color: rgba(138, 167, 255, 0.69);
+   list-style: none;
+    display: block;
+    color:black;
+    font:bold 23px/1 "宋体";
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.list1{
+    top:10%;
+    left: 18%;
+    position: absolute;
+    width: 80%;
+    height: 63%;
+    float: left;
+    margin-top: 40px;
+    opacity: 1;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+.list{
+    width: 930px;
+    height: 60px;
+    margin-top:10px;
+}
+.list3{
+    display: none;
+    top:10%;
+    left: 18%;
+    position: absolute;
+    width: 80%;
+    height: 63%;
+    float: left;
+    margin-top: 40px;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+.list2{
+    display: none;
+    top:10%;
+    left: 18%;
+    position: absolute;
+    width: 80%;
+    height: 63%;
+    float: left;
+    margin-top: 40px;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+.list2 button{
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    float: left;
+   width: 95px;
+    background-color:#ff8b31;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 940px;
+    margin-top: -34px;
+
+}
+.list button:hover{
+ color: black;
+    border: 2px solid #ff8b31;  background-color: white;
+}
+.fa:hover,.shouhuo:hover,.wan:hover {
+    background-color: #31708f;
+}
+
+.name img{
+    width:70px;
+    height:50px;float: left;
+}
+
+.name{
+    width: 200px;
+    height: 30px;float: left;
+    margin-left: 40px;
+    text-align: center; color:black;
+    font:bold 23px/1 "宋体";
+
+}
+.price{
+    width: 150px;
+    height: 30px;float: left;
+    margin-left: 70px;
+    text-align: center; color:black;
+    font:bold 23px/1 "宋体";
+
+}
+.id {
+    width: 150px;
+    height: 30px;
+    float: left;
+    margin-left: 60px;
+color:black;
+    font:bold 23px/1 "宋体";
+
+}
+.num{
+     width: 150px;
+     height: 30px;float: left;
+     margin-left: 95px;
+
+    text-align: center;
+    color:black;
+    font:bold 23px/1 "宋体";
+
+ }

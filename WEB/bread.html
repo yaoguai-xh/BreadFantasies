@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>面包-面包幻想</title>
+<link rel="shortcut icon" href="img/icon.ico" type="image/x-icon"/>
+<link href="css/min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/goodsStyle.css"/>
+<link rel="stylesheet" type="text/css" href="css/goods.css"/>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/post.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+</head>
+
+<body data-index="4" style="position: static;" onload="breadPost()">
+
+
+<div class="header">
+    <div class="logo">
+       <img id="logo" src="pic/logo.png" alt="logo">
+    </div>
+   <div class="header_list">
+              <ul>
+                  <li class="shou"><a href="index.html" style="color: white">首页</a> </li>
+
+                  <li class="dropdown">
+                      <a href="cake.html"  class="dropbtn" style="color: white">蛋糕</a>
+                      <div class="dropdown-content">
+
+                      </div></li>
+                  <li class="dropdown">
+                      <a href="bread.html"   class="dropbtn" style="color: white">面包</a>
+                      <div class="dropdown-content">
+
+                  </li>
+                  <li class="dropdown">
+                      <a href="pastry.html"   class="dropbtn"  style="color: white">点心</a>
+                  </li>
+                  <li ><a href="act.html"  class="about" style="color: white">最新活动</a></li>
+                  <li class="order">
+                      <img  src="pic/椭圆.png" ><a class="ord1" href="order.html"    style="color:darkorange;z-index: 10;position: absolute;margin-left: 30px">订单</a>
+                  </li>
+                  <li id="loginDiv" style="float: right;margin-top: 5px;margin-left: 10px;">您好,请先登录<br><a style="font-size: 15px" href="login.aspx" target="_blank" >登录/注册</a>
+                  <script type="text/javascript">
+                    var userID = $.cookie("userId"); // 获得cookie
+                    if (userID!=null) {
+                        $.ajax({
+                            type: 'post',
+                            url: 'Handler.ashx',
+                            async: true,
+                            data: { KEY: '1', ID: userID },// key= 1获取单个用户全部信息
+                            success: function (result) {
+                                var user = eval('(' + result + ')');
+                                var userNickName = user.nickName;
+                                document.getElementById("loginDiv").innerHTML="欢迎你，"+userNickName+"<br><a style=\"font-size: 15px\" href=\"login.aspx\" target=\"_blank\" >注销</a>";
+                            },
+                            error: function () {
+                                alert("userPost error");
+                            }
+                        });
+                    }
+                </script>
+                  </li>
+              </ul>
+          </div>
+</div>
+
+
+
+
+
+   
+
+
+<section class="activity-bg">
+    <div class="container space-base-b" id="displayAllGoods">
+
+		<section class="head-paths bg-info" style="margin-top: 7%;">
+			<div class="container">
+
+					<div class="head-ad hidden-xs">
+											</div>
+
+				 	<div class="paths-title">	
+						<h1 class="img-title inmove-left change-left" style="transition-delay: 0s;"><span class="eng">bread</span><i class="cutline"></i>
+                            面包<span class="badge badge-org badge-base"></span>
+						</h1>
+						<div class="paths-text inmove-left change-left" style="transition-delay: 0.2s;">
+                            面包幻想将面包与更多的营养元素和自然滋味联系并融合到一起。取之天然的优质食材，配合 “低糖、低油、低 盐”三低天然烘焙，在面包幻想的精心编织下,演绎着面包的自然味道。						
+                        </div>	
+					</div>					
+			</div>
+		</section>
+		<!--
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width="397" height="397" src="img/20001_main.jpg" style="display: block;">
+
+                <div class="item-tit">
+
+											<h3 class="pro-tit"><b>黄金乳酪面包	</b></h3>
+						<span class="price"><em class="text-success">￥6.00</em></span>
+					
+				</div>
+            </a>
+        </div>
+    
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width=397 height=397 src="img/20002_main.jpg" style="display: block;">
+
+                <div class="item-tit">
+
+											<h3 class="pro-tit"><b>乳酪面包</b></h3>
+						<span class="price"><em class="text-success">￥11.80</em></span>
+					
+				</div>
+            </a>
+        </div>
+    
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width="397" height="397" src="img/20003_main.jpg" style="display: block;">
+
+                <div class="item-tit">
+
+											<h3 class="pro-tit"><b>辣味肉松面包</b></h3>
+						<span class="price"><em class="text-success">￥4.00</em></span>
+					
+				</div>
+            </a>
+        </div>
+    
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width="397" height="397"  src="img/20004_main.jpg" style="display: block;">
+
+                <div class="item-tit">
+
+											<h3 class="pro-tit"><b>日式手撕面包</b></h3>
+						<span class="price"><em class="text-success">￥12.50</em></span>
+					
+				</div>
+            </a>
+        </div>
+    
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width="397" height="397"  src="img/20005_main.jpg" style="display: block;">
+
+                <div class="item-tit">
+
+											<h3 class="pro-tit"><b>鸡排三明治</b></h3>
+						<span class="price"><em class="text-success">￥11.80</em></span>
+					
+				</div>
+            </a>
+        </div>
+
+
+        -->
+
+        
+    </div>
+</section>
+  
+
+
+
+
+
+</body>
+</html>

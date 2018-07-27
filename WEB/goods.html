@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title id="showTitle">商品详情---</title>
+    <link rel="shortcut icon" href="pic/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/goodsPage.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/city2.js"></script>
+    <script type="text/javascript" src="js/weixin.js"></script>
+    <script type="text/javascript" src="js/myJavaScript.js"></script>
+    <script type="text/javascript" src="js/post.js"></script>
+    
+
+</head>
+
+<body onload="goodsPost()">
+  <div class="rong">
+      <div class="header">
+          <div class="logo">
+              <img id="logo" src="pic/logo.png" alt="logo">
+          </div>
+          <div class="header_list">
+              <ul>
+                  <li class="shou"><a href="index.html" style="color: white">首页</a> </li>
+
+                  <li class="dropdown">
+                      <a href="cake.html"  class="dropbtn" style="color: white">蛋糕</a>
+                      <div class="dropdown-content">
+
+                      </div></li>
+                  <li class="dropdown">
+                      <a href="bread.html"   class="dropbtn" style="color: white">面包</a>
+                      <div class="dropdown-content">
+
+                  </li>
+                  <li class="dropdown">
+                      <a href="pastry.html"   class="dropbtn"  style="color: white">点心</a>
+                  </li>
+                  <li ><a href="act.html"  class="about" style="color: white">最新活动</a></li>
+                  <li class="order">
+                      <img  src="pic/椭圆.png" ><a class="ord1" href="order.html"    style="color:darkorange;z-index: 10;position: absolute;margin-left: 30px">订单</a>
+                  </li>
+                  <li id="loginDiv"  style="float: right;margin-top: 5px;margin-left: 10px;">您好,请先登录<br><a style="font-size: 15px" href="login.aspx" target="_blank" >登录/注册</a>
+                  <script type="text/javascript">
+                    var userID = $.cookie("userId"); // 获得cookie
+                    if (userID!=null) {
+                        $.ajax({
+                            type: 'post',
+                            url: 'Handler.ashx',
+                            async: true,
+                            data: { KEY: '1', ID: userID },// key= 1获取单个用户全部信息
+                            success: function (result) {
+                                var user = eval('(' + result + ')');
+                                var userNickName = user.nickName;
+                                document.getElementById("loginDiv").innerHTML="欢迎你，"+userNickName+"<br><a style=\"font-size: 15px\" href=\"login.aspx\" target=\"_blank\" >注销</a>";
+                            },
+                            error: function () {
+                                alert("userPost error");
+                            }
+                        });
+                    }
+                </script>
+                  </li>
+
+              </ul>
+          </div>
+
+  </div>
+      <div class="goodstitle" id="goodsTitle">
+          <!--
+          等待填充
+          -->
+      </div>
+      
+
+
+
+
+      <div class="buy" id="buy">
+          <div class="buyimg" ><img src="img/timg.jpg" id="goodsImage_main"> </div>
+          <div class="buyintro">
+               <div class="introname"> 
+                  <h style=" font-family:宋体;   color: #523306;  font-size:30px;   font-weight: 600;">
+                    <small id="showGoodsName"><!--等待填充--></small>
+                  </h>
+                </div>
+              <div class="buytype">  
+                <img src="pic/buyicon.png" style="margin-top:auto">  
+                <i class="ctype" id="showType"><!--等待填充--></i>
+              </div>
+              <div class="batching"> 
+                <h class="batching1" id="showBatching" ><!--等待填充--></h><br><br><br><br>
+                     <h class="batching2">  保质期： </h>
+                     <i class="batching3" id="showToBadTime"><!--等待填充--></i>&nbsp &nbsp &nbsp &nbsp 
+                     <h class="batching4" >商品ID：</h>
+                      <i class="batching5" id="showGoodsId"><!--等待填充--></i> 
+              </div>
+              <div class="intro"> 
+                  <h class="introtext" id="showIntroduce"><!--等待填充--></h>
+              </div>
+              <div class="price1"> ￥ &nbsp<i class="price" id="showPrice"><!--等待填充--></i>&nbsp &nbsp &nbsp &nbsp </div>
+
+              <div class="button"   onclick="openWindow()"><a  href="javascript::void(0);"  style="text-decoration:none;"><li class="buybutton" style="text-decoration:none;">购买</li></a></div>
+             
+          </div>
+      </div>
+
+
+
+
+
+<!--                  确认购买窗口                     -->
+     <div id="confirmOrder" class="white_content" onmousemove="confirmJudge()">
+        <a href="#" id="closeWindowBtn" onclick = "document.getElementById('confirmOrder').style.display='none';document.getElementById('fade').style.display='none'">
+          <img src="pic/close.png" width="40px" height="40px" >
+        </a> 
+
+        <h2 id="h_window" align="center">&nbsp;&nbsp;确认订单</h2>
+        <div id="windowContainer">
+            <p id="p_container">/*请填写正确的信息，我们会送货上门*/</p>
+            <div class="TextInput">
+                <label><img src="img/count.png" width="40px" height="40px" class="ImageIcon"></label>
+                <label id="p_goodsNum">数量</label>
+                <a id="sub" href="javascript:void(0);"><img src="img/sub.png" width="40px" height="40px"></a>
+                <input type="text" value="1" id="goodsNum" disabled="disabled">
+                <a id="add" href="javascript:void(0);"><img src="img/add.png" width="40px" height="40px"></a>
+            </div>
+            
+            <div class="TextInput">
+                <label><img src="img/money.png" width="40px" height="40px" class="ImageIcon"></label>
+                <label id="p_goodsNum">价格</label>
+                <div id="price1">￥<i id="price"><!--等待填充--></i></div>
+            </div>
+
+            <div class="TextInput">
+                <label><img src="pic/account.png" width="40px" height="40px" class="ImageIcon"></label>
+                <input type="text" id="userName" name="userName" placeholder="请输入你的姓名" maxlength="16" onblur="userNameJudge1()">
+                <div class="hit" id="userNameHit"></div>
+            </div>
+            <div class="TextInput">
+                <label><img src="pic/phone.png" width="40px" height="40px" class="ImageIcon"></label>
+                <input  type="text" id="phone" name="phone"  placeholder="请输入11位手机号码" maxlength="11"  onblur="phoneJudge1()">
+                <div class="hit" id="phoneHit"></div>
+            </div>
+            
+            <div id="selectAddress">
+                <label><img src="pic/area.png" width="40px" height="40px" class="ImageIcon"></label>
+                <div>
+                  <select class="province" id="prov" name="province"></select>
+                  <select class="citys" id="city" name="citys"></select>
+                  <select class="district" id="area" name="district"></select>
+                </div>
+            </div>
+                        <script type="text/javascript">
+                          //新建一个CitySelect
+                          var selectVa1 = new CitySelect({
+                          data   : data,
+                          provId : "#prov",
+                          cityId : '#city',
+                          areaId : '#area',
+                          isSelect: false
+                          });
+                        </script>
+            <div id="inputAddress">
+                <label><img src="pic/local.png" width="40px" height="40px" class="ImageIcon"></label>
+                <div>
+                    <label id="p_textarea">详细地址</label>
+                    <label><textarea  id="inputTextarea" name="lastAdress" cols="23" rows="2"  title="请输入详细地址"></textarea></label>
+                </div>
+            </div>
+            <div class="lastHit" id="lastHit"></div>
+            <input type="button" value="确定"   id="confirm" onclick="sendData()">
+        </div>  
+      </div> 
+      <div id="fade" class="black_overlay"></div>
+<!--                  确认购买窗口                     -->
+
+
+      <img class="ge" id="goodsImage_1" src="img/timg.jpg" >
+      <div class="left">
+          <div class="leftimg"><img src="img/timg.jpg" id="goodsImage_2"></div>
+          <div class="lefttext"> 
+            <p class="text" id="goodsTitle1"> 
+          <!--
+          等待填充
+          -->
+            </p>
+          </div>
+      </div>
+     <div class="right">
+         <div class="righttext"> 
+            <p class="text" id="goodsTitle2">
+             <!--
+              等待填充
+              -->
+            </p>
+          </div>
+         <div class="rightimg"><img src="img/timg.jpg" id="goodsImage_3"></div>
+     </div>
+      <div class="tobadtime">
+          <div class="badimg"><img src="img/timg.jpg" id="goodsImage_4"></div>
+          <div class="badtimetext">
+              <h4>温馨提示</h4>
+              <p>本产品常温保存即可<br>保质期为<span class="text-success" id="showToBadTime1"><!--等待填充--></span><br><br>开封后请尽快食用</p>
+              <div class="qy-phone-txt"><p>若您有任何疑问，请拨打:1731731731</p></div>
+
+      </div>
+     </div>
+          <div class="footer">
+              <div class="no1">
+                  <ul>
+                      <li><a href="http://baidu.smile-cake.cn/?s=Smilesm-PC&p=A5kd-fy&u=%E5%BC%80%E9%9D%A2%E5%8C%85%E5%BA%97&e_keywordid=67104827218" target="_blank" >加入我们</a></li>
+                      <li>|</li>
+                      <li><a href="http://baidu.smile-cake.cn/?s=Smilesm-PC&p=A5kd-fy&u=%E5%BC%80%E9%9D%A2%E5%8C%85%E5%BA%97&e_keywordid=67104827218" target="_blank" >企业招标</a></li>
+                      <li>|</li>
+                      <li><a href="http://baidu.smile-cake.cn/?s=Smilesm-PC&p=A5kd-fy&u=%E5%BC%80%E9%9D%A2%E5%8C%85%E5%BA%97&e_keywordid=67104827218" target="_blank" >联系我们</a></li>
+                  </ul>
+                  <h class="no2h">客服电话： 87632 49536</h>
+                  <h class="no3h">版权所有 © 2016 自贡面包幻想 . POWER BY BREAD </h>
+              </div>
+              <div class="icon">
+
+                  <img class="erwei" src="pic/erwei.png">
+
+                  <img class="weixin" src="pic/weixin.png">
+                  <a href="https://mail.qq.com/" target="_blank" ><img class="QQ" src="pic/QQ.png"></a>
+              </div>
+
+          </div>
+     
+  <!--MessageBox提示框-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.dialogbox.css">
+    <script src="js/jquery.dialogBox.js"></script>
+    <div id="QMessageBox" z-index=999></div>   
+  <!--MessqgaBox提示框--> 
+</body>
+</html>

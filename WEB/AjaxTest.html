@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>梦想面包店</title>
+    <script src="jQuery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/post.js"></script>
+    
+    <script type="text/javascript">
+        function Post() {
+            var id = "10001";
+            $.ajax({
+                type: 'post',
+                url: 'Handler.ashx',
+                async: true,
+                data: { KEY: '6',ID:id},
+                success: function (result) {
+                    document.getElementById("labTest").innerHTML = result;
+                },
+                error: function () {
+                    document.getElementById("labTest").innerHTML = "ERROR!";
+                }
+            });
+        }
+        </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <label id="labTest"></label>
+        <button type="button" onclick="Post()">获取Cookies</button>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      9
+    </div>
+    </form>
+</body>
+</html>

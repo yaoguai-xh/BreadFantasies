@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+ <head lang="en"> 
+  <meta charset="UTF-8" /> 
+  <title>首页</title> 
+  <link rel="stylesheet" type="text/css" href="css/daohang.css" /> 
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> 
+  <script type="text/javascript" src="js/weixin.js"></script> 
+  <script type="text/javascript" src="js/post.js"></script> 
+  <script type="text/javascript" src="js/temp.js"></script> 
+  <script type="text/javascript" src="js/jquery.cookie.js"></script> 
+  <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" /> 
+ </head> 
+ <body> 
+  <div class="rongqi"> 
+   <div class="header"> 
+    <div class="logo"> 
+     <img id="logo" src="pic/logo.png" alt="logo" /> 
+    </div> 
+    <div class="header_list"> 
+     <ul> 
+      <li class="shou"><a href="index.html" style="color: white">首页</a> </li> 
+      <li class="dropdown"> <a href="cake.html" class="dropbtn" style="color: white">蛋糕</a> 
+       <div class="dropdown-content"> 
+       </div></li> 
+      <li class="dropdown"> <a href="bread.html" class="dropbtn" style="color: white">面包</a> 
+       <div class="dropdown-content"> 
+       </div></li> 
+      <li class="dropdown"> <a href="pastry.html" class="dropbtn" style="color: white">点心</a> </li> 
+      <li><a href="act.html" class="about" style="color: white">最新活动</a></li> 
+      <li class="order"> <img src="pic/椭圆.png" /><a class="ord1" href="order.html" style="color:darkorange;z-index: 10;position: absolute;margin-left: 30px">订单</a> </li> 
+      <li id="loginDiv" style="float: right;margin-top: 5px;margin-left: 10px;">您好,请先登录<br /><a style="font-size: 15px" href="login.aspx" target="_blank">登录/注册</a> </li> 
+      <script type="text/javascript">
+                    var userID = $.cookie("userId"); // 获得cookie
+                    if (userID!=null) {
+                        $.ajax({
+                            type: 'post',
+                            url: 'Handler.ashx',
+                            async: true,
+                            data: { KEY: '1', ID: userID },// key= 1获取单个用户全部信息
+                            success: function (result) {
+                                var user = eval('(' + result + ')');
+                                var userNickName = user.nickName;
+                                document.getElementById("loginDiv").innerHTML="欢迎你，"+userNickName+"<br><a style=\"font-size: 15px\" href=\"login.aspx\" target=\"_blank\" >注销</a>";
+                            },
+                            error: function () {
+                                alert("userPost error");
+                            }
+                        });
+                  }
+                  </script> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="img_display"> 
+    <img id="picture" src="pic/home_title.png" alt=" " /> 
+    <ul id="block"> 
+     <li></li> 
+     <li></li> 
+     <li></li> 
+    </ul> 
+   </div> 
+   <div class="classify"> 
+    <div class="class_img1"> 
+     <a href="pastry.html">
+      <div class="kimg1">
+       <img class="img1" src="pic/classify1.jpg" alt="点心" /> 
+      </div> 
+      <div class="shade1"> 
+      </div> <h2 class="img-title"> <span class="eng">PASTRY</span> <i class="cutline">/ </i>点心</h2> </a> 
+    </div> 
+    <div class="class_img2"> 
+     <a href="cake.html"> 
+      <div class="kimg2">
+       <img class="img2" src="pic/classify2.jpeg" alt="蛋糕" />
+      </div> 
+      <div class="shade2"> 
+      </div> <h2 class="img-title"> <span class="eng">CAKE</span> <i class="cutline">/ </i>蛋糕</h2> </a> 
+    </div> 
+    <div class="class_img3"> 
+     <a href="bread.html">
+      <div class="kimg3">
+       <img class="img3" src="pic/classify5.jpeg" alt="面包" />
+      </div> 
+      <div class="shade3"> 
+      </div> <h2 class="img-title"> <span class="eng">BREAD</span> <i class="cutline">/ </i>面包</h2> </a> 
+    </div> 
+   </div> 
+   <div class="act"> 
+    <h1 class="act-h">最新活动</h1> 
+    <div class="back-img"> 
+     <a href="act.html"> <img class="topimgg" src="pic/进入.png" /></a> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div class="no1"> 
+    <ul> 
+     <li><a href="http://baidu.smile-cake.cn/?s=Smilesm-PC&amp;p=A5kd-fy&amp;u=%E5%BC%80%E9%9D%A2%E5%8C%85%E5%BA%97&amp;e_keywordid=67104827218" target="_blank">加入我们</a></li> 
+     <li>|</li> 
+     <li><a href="http://baidu.smile-cake.cn/?s=Smilesm-PC&amp;p=A5kd-fy&amp;u=%E5%BC%80%E9%9D%A2%E5%8C%85%E5%BA%97&amp;e_keywordid=67104827218" target="_blank">企业招标</a></li> 
+     <li>|</li> 
+     <li><a href="http://baidu.smile-cake.cn/?s=Smilesm-PC&amp;p=A5kd-fy&amp;u=%E5%BC%80%E9%9D%A2%E5%8C%85%E5%BA%97&amp;e_keywordid=67104827218" target="_blank">联系我们</a></li> 
+    </ul> 
+    <h class="no2h">
+     客服电话： 87632 49536
+    </h> 
+    <h class="no3h">
+     版权所有 &copy; 2016 自贡面包幻想 . POWER BY BREAD 
+    </h> 
+   </div> 
+   <div class="icon"> 
+    <img class="erwei" src="pic/erwei.png" /> 
+    <img class="weixin" src="pic/weixin.png" /> 
+    <a href="https://mail.qq.com/" target="_blank"><img class="QQ" src="pic/QQ.png" /></a> 
+   </div> 
+  </div>   
+ </body>
+</html>

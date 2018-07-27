@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>点心-面包幻想</title>
+<link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+<link href="css/min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/goodsStyle.css">
+<link rel="stylesheet" type="text/css" href="css/goods.css">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/post.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+</head>
+
+<body data-index="4" style="position: static;" onload="pastryPost()">
+<div class="header">
+    <div class="logo">
+       <img id="logo" src="pic/logo.png" alt="logo">
+    </div>
+    <div class="header_list">
+              <ul>
+                  <li class="shou"><a href="index.html" style="color: white">首页</a> </li>
+
+                  <li class="dropdown">
+                      <a href="cake.html"  class="dropbtn" style="color: white">蛋糕</a>
+                      <div class="dropdown-content">
+
+                      </div></li>
+                  <li class="dropdown">
+                      <a href="bread.html"   class="dropbtn" style="color: white">面包</a>
+                      <div class="dropdown-content">
+
+                  </li>
+                  <li class="dropdown">
+                      <a href="pastry.html"   class="dropbtn"  style="color: white">点心</a>
+                  </li>
+                  <li ><a href="act.html"  class="about" style="color: white">最新活动</a></li>
+                  <li class="order">
+                      <img  src="pic/椭圆.png" ><a class="ord1" href="order.html"    style="color:darkorange;z-index: 10;position: absolute;margin-left: 30px">订单</a>
+                  </li>
+                  <li id="loginDiv" style="float: right;margin-top: 5px;margin-left: 10px;">您好,请先登录<br><a style="font-size: 15px" href="login.aspx" target="_blank" >登录/注册</a>
+                  <script type="text/javascript">
+                    var userID = $.cookie("userId"); // 获得cookie
+                    if (userID!=null) {
+                        $.ajax({
+                            type: 'post',
+                            url: 'Handler.ashx',
+                            async: true,
+                            data: { KEY: '1', ID: userID },// key= 1获取单个用户全部信息
+                            success: function (result) {
+                                var user = eval('(' + result + ')');
+                                var userNickName = user.nickName;
+                                document.getElementById("loginDiv").innerHTML="欢迎你，"+userNickName+"<br><a style=\"font-size: 15px\" href=\"login.aspx\" target=\"_blank\" >注销</a>";
+                            },
+                            error: function () {
+                                alert("userPost error");
+                            }
+                        });
+                    }
+                </script>
+                  </li>
+
+              </ul>
+          </div>
+</div>
+
+
+
+
+
+
+
+<section class="activity-bg">
+    <div class="container space-base-b" id="displayAllGoods">
+
+    <section class="head-paths bg-info" style="margin-top: 7%;">
+        <div class="container">
+
+                    <div class="head-ad hidden-xs">
+                                            </div>
+
+                    <div class="paths-title">   
+                        <h1 class="img-title inmove-left change-left" style="transition-delay: 0s;"><span class="eng">PASTRY</span><i class="cutline"></i>
+                            点心<span class="badge badge-org badge-base"></span>
+                        </h1>
+                        <div class="paths-text inmove-left change-left" style="transition-delay: 0.2s;">
+                            面包幻想将点心与更多的美味元素和地域文化联系并融合到一起。冲破地域的局限，精选各地优质原料，打造异地特色点心，在大师的精心制作下，成就一场美味与文化并重的人文盛宴。                        </div>  
+                    </div>                  
+        </div>
+    </section>
+
+<!--
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width="397" height="397" src="img/30001_main.jpg">
+
+                <div class="item-tit">
+
+                                            <h3 class="pro-tit"><b>牛利酥</b></h3>
+                        <span class="price"><em class="text-success">￥6.50</em></span>
+                    
+                </div>
+            </a>
+        </div>
+    
+
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width="397" height="397" src="img/30002_main.jpg">
+
+                <div class="item-tit">
+
+                                            <h3 class="pro-tit"><b>椰香酥条</b></h3>
+                        <span class="price"><em class="text-success">￥10.00</em></span>
+                    
+                </div>
+            </a>
+        </div>
+
+    
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width="397" height="397" src="img/30003_main.jpg">
+
+                <div class="item-tit">
+
+                                            <h3 class="pro-tit"><b>牛奶味卡拉棒</b></h3>
+                        <span class="price"><em class="text-success">￥10.00</em></span>
+                    
+                </div>
+            </a>
+        </div>
+
+    
+        <div class="col-xs-6 col-sm-4 product-item">
+            <a href="goods.html"  target="_blank" >
+                <img class="lazy img-responsive" width="397" height="397" src="img/30004_main.jpg">
+
+                <div class="item-tit">
+
+                                            <h3 class="pro-tit"><b>奶香牛轧糖</b></h3>
+                        <span class="price"><em class="text-success">￥16.80</em></span>
+                    
+                </div>
+            </a>
+        </div>
+-->
+
+
+    </div>
+</section>
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+</body>
+</html>
